@@ -2,9 +2,9 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 
-from database import SessionLocal, engine, Base
-from model import Item
-from schema import ItemCreate, ItemResponse
+from .database import SessionLocal, engine, Base
+from .model import Item
+from .schema import ItemCreate, ItemResponse
 
 app = FastAPI()
 
