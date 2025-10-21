@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List
@@ -31,6 +31,10 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/headers")
+async def get_headers(request: Request):
+    headers_dict = dict(request.headers)
+    return headers_dict
 
 @app.get("/healthy")
 def check_healthy():
