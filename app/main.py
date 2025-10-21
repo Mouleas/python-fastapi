@@ -37,7 +37,7 @@ async def get_headers(request: Request):
     print(headers_dict)
     return True
 
-@app.get("/healthy")
+@app.get("/healthy/")
 def check_healthy():
     return {"status": "OK", "message": "Your application is healthy!"}
 
