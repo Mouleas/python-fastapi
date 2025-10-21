@@ -31,7 +31,7 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/headers")
+@app.get("/headers/")
 async def get_headers(request: Request):
     headers_dict = dict(request.headers)
     print(headers_dict)
