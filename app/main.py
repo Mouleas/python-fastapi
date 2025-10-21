@@ -34,7 +34,8 @@ def get_db():
 @app.get("/headers")
 async def get_headers(request: Request):
     headers_dict = dict(request.headers)
-    return headers_dict
+    print(headers_dict)
+    return True
 
 @app.get("/healthy")
 def check_healthy():
